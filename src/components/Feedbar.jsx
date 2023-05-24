@@ -12,7 +12,8 @@ import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { Box } from "@mui/material";
+import { Box, Checkbox } from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
 
 export const Feedbar = () => {
   return (
@@ -35,7 +36,7 @@ export const Feedbar = () => {
         <CardMedia
           component="img"
           height="194"
-          image="/static/images/cards/paella.jpg"
+          image= "https://images.pexels.com/photos/4534200/pexels-photo-4534200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Paella dish"
         />
         <CardContent>
@@ -47,7 +48,7 @@ export const Feedbar = () => {
         </CardContent>
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
+          <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
           </IconButton>
           <IconButton aria-label="share">
             <ShareIcon />
