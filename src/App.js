@@ -1,13 +1,9 @@
-import './App.css';
-import Appbar from './components/Appbar';
-import { Sidebar } from './components/Sidebar';
-
+import "./App.css";
+import Appbar from './components/Appbar'
 function App() {
   return (
     <div className="App">
-      
-     <Appbar />
-     
+    <Appbar />
     </div>
   );
 }
