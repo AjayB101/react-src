@@ -21,7 +21,7 @@ const Sidebar = () => {
       display: { xs: "none", sm: "block" },
       backgroundColor: "#FCFCFC",
       width: "250px",
-      height: '83vh',
+      height: '80vh',
     }}
   >
   
