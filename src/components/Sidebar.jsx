@@ -6,62 +6,80 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Home } from "@mui/icons-material";
-
-export const Sidebar = () => {
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import FormatAlignJustifyIcon from '@mui/icons-material/FormatAlignJustify';
+import DetailsIcon from '@mui/icons-material/Details';
+import TaskIcon from '@mui/icons-material/Task';
+import TableViewIcon from '@mui/icons-material/TableView';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+const Sidebar = () => {
   return (
     <Box
-      flex={1}
-      p={2}
-      sx={{
-        display: { xs: "none", sm: "block" },
-        backgroundColor: "whitesmoke",
-         width:'250px'
-      }}
-    >
+    flex={1}
+    p={2}
+    sx={{
+      display: { xs: "none", sm: "block" },
+      backgroundColor: "#FCFCFC",
+      width: "250px",
+      height: '83vh',
+    }}
+  >
+  
       <List>
         <ListItem disablePadding>
-          <ListItemButton component='a' href="#smaple">
+          <ListItemButton
+            component="a"
+            href="#smaple"
+            sx={{ background: "#475BE8", borderRadius: "12px" }}
+          >
             <ListItemIcon>
               <Home color="white" />
             </ListItemIcon>
-            <ListItemText primary="HomePage" />
+            <ListItemText primary="Dashboard" sx={{ color: "#FCFCFC" }} />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton component='a' href="#smaple">
+          <ListItemButton component="a" href="#smaple">
             <ListItemIcon>
-              <Home color="white" />
+              <AccountCircleIcon color="white" />
             </ListItemIcon>
-            <ListItemText primary="pages" />
+            <ListItemText primary="Employeedetails" sx={{color:'#808191'}} />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton component='a' href="#smaple">
+          <ListItemButton component="a" href="#smaple">
             <ListItemIcon>
-              <Home color="white" />
+              <FormatAlignJustifyIcon color="white" />
             </ListItemIcon>
-            <ListItemText primary="Group" />
+            <ListItemText primary="Employeeform" sx={{color:'#808191'}}/>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton component='a' href="#smaple">
+          <ListItemButton component="a" href="#smaple">
             <ListItemIcon>
-              <Home color="white" />
+              <TaskIcon color="white" />
             </ListItemIcon>
-            <ListItemText primary="MarketPlace" />
+            <ListItemText primary="Taskform"  sx={{color:'#808191'}}/>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton component='a' href="#smaple">
+          <ListItemButton component="a" href="#smaple">
             <ListItemIcon>
-              <Home color="white" />
+              <TableViewIcon color="white" />
             </ListItemIcon>
-            <ListItemText primary="HomePage" />
+            <ListItemText primary="Task table"  sx={{color:'#808191'}} />
           </ListItemButton>
         </ListItem>
-       
-
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="#smaple">
+            <ListItemIcon>
+              <PersonAddAltIcon color="white" />
+            </ListItemIcon>
+            <ListItemText primary="Adduser"  sx={{color:'#808191'}} />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
 };
+export default Sidebar;
