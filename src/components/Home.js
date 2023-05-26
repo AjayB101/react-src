@@ -1,6 +1,6 @@
 import React from "react";
 import array from "./array";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -10,15 +10,18 @@ const Home = () => {
     localStorage.setItem("name", name);
     localStorage.setItem("age", age);
   };
-  const deleteData = (id) => {
-    const index = array.map((item) => {
-      return item.id;
-      array.splice(index, 1);
-      navigate("/");
-    });
+  const handleDelete = (id) => {
+    const index = array
+      .map((item) => {
+        return item.id;
+      })
+      .indexOf(id);
+    array.splice(index, 1);
+    navigate("/");
   };
   return (
     <div>
+      <Typography variant="h3">Home page</Typography>
       <table>
         <thead>
           <tr>
@@ -29,12 +32,12 @@ const Home = () => {
         </thead>
         <tbody>
           {array.map((item) => (
-           
-             <tr>
-             <td key={item.id}>{item.Name}</td>
-              <td key={item.id}>{item.Age}</td>
-              <td><Button>Update</Button>
-              <Button>delete</Button>
+            <tr key={item.id}>
+              <td>{item.Name}</td>
+              <td>{item.Age}</td>
+              <td>
+                <button>Update</button>
+                <Button onClick={() => handleDelete(item.id)}>delete</Button>
               </td>
             </tr>
           ))}
