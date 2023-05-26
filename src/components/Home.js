@@ -1,15 +1,10 @@
 import React from "react";
 import array from "./array";
 import { Button, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
-  const storedata = (id, name, age) => {
-    localStorage.setItem("id", id);
-    localStorage.setItem("name", name);
-    localStorage.setItem("age", age);
-  };
   const handleDelete = (id) => {
     const index = array
       .map((item) => {
@@ -18,6 +13,11 @@ const Home = () => {
       .indexOf(id);
     array.splice(index, 1);
     navigate("/");
+  };
+  const setID = (id, name, age) => {
+    localStorage.setItem("id", id);
+    localStorage.setItem("name", name);
+    localStorage.setItem("age", age);
   };
   return (
     <div>
@@ -35,14 +35,22 @@ const Home = () => {
             <tr key={item.id}>
               <td>{item.Name}</td>
               <td>{item.Age}</td>
+
               <td>
-                <button>Update</button>
-                <Button onClick={() => handleDelete(item.id)}>delete</Button>
+                <Link to={`/edit`} >
+               <td> <Button onClick={()=>setID(item.id,item.Name,item.Age)}>
+                  Update
+                </Button></td>
+                </Link>
+                <Button variant="outlined" onClick={() => handleDelete(item.id)}>delete</Button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <Link className="d-grid gap-2" to='/create'>
+                <Button variant="warning" size="lg">Create</Button>
+            </Link>
     </div>
   );
 };
