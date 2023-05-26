@@ -2,7 +2,7 @@ import { TextField, Button, Container, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import array from "./array";
 
 function Create() {
@@ -67,9 +67,11 @@ function Create() {
             >
               Submit
             </Button>
+            <Link to={'/'}>
             <Button fullWidth variant="outlined">
               Home
             </Button>
+            </Link>
           </Grid>
         </Grid>
       </form>
