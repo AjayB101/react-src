@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "name": "AJAY",
+      "address":"tamilnadu,coimbatore",
+      "contact": "1232232323",
+      "email": "ajay@gmail.com",
+      "id":1
+    }
+  ]
+}
