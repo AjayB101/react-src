@@ -13,23 +13,22 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const api = "http://localhost:5000/users";
-const initialState={
-  name:"",
-  address:"",
-  contact:"",
-  email:"",
-
-}
+const initialState = {
+  name: "",
+  address: "",
+  contact: "",
+  email: "",
+};
 function App() {
   const [data, setdata] = useState([]);
-  const [state, setstate] = useState(initialState)
-  const{name,address,contact,email}=state
+  const [state, setstate] = useState(initialState);
+  const { name, address, contact, email } = state;
   useEffect(() => {
     loadData();
   }, []);
   const loadData = async () => {
-    const response = await axios.get(api);
-    setdata(response.data);
+  const response = await axios.get(api);
+  setdata(response.data);
   };
   return (
     <div>
@@ -40,7 +39,48 @@ function App() {
       <Container style={{ marginTop: "70px" }}>
         <Row>
           <Col md={4}>
-            <h2>Form</h2>
+           <Form>
+            <Form.Group>
+              <Form.Label style={{textAlign:'left'}}  >
+                 <Form.Control
+                 type="text"
+                 placeholder="Enter Name"
+                 value={name}
+                 name='name'
+                  />
+              </Form.Label>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label style={{textAlign:'left'}}  >
+                 <Form.Control
+                 type="text"
+                 placeholder="Enter address"
+                 value={address}
+                 name='address'
+                  />
+              </Form.Label>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label style={{textAlign:'left'}}  >
+                 <Form.Control
+                 type="text"
+                 placeholder="Enter contact"
+                 value={contact}
+                 name='contact'
+                  />
+              </Form.Label>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label style={{textAlign:'left'}}  >
+                 <Form.Control
+                 type="text"
+                 placeholder="Enter email"
+                 value={email}
+                 name='email'
+                  />
+              </Form.Label>
+            </Form.Group>
+           </Form>
           </Col>
           <Col md={8}>
             <Table bordered hover>
